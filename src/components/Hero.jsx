@@ -15,29 +15,15 @@ const Hero = () => {
   const autoScrollTimeoutRef = useRef(null);
   const hasScrolledRef = useRef(false);
   const [showEnhancedScroll, setShowEnhancedScroll] = useState(false);
-  const [shouldRender3D, setShouldRender3D] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Detecção inteligente para renderização 3D
+  // Detectar mobile
   useEffect(() => {
-    const checkCapabilities = () => {
-      // Verifica se está no browser
-      if (typeof window === 'undefined') {
-        setShouldRender3D(false);
-        return;
-      }
-
-      const isMobile = window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      const hasWebGL = !!window.WebGLRenderingContext;
-      const isSlowConnection = navigator.connection?.effectiveType === 'slow-2g' || navigator.connection?.effectiveType === '2g';
-      
-      // Renderizar 3D apenas se:
-      // - Não for mobile
-      // - Tiver WebGL
-      // - Conexão não for lenta
-      setShouldRender3D(!isMobile && hasWebGL && !isSlowConnection);
+    const checkMobile = () => {
+      return window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     };
     
-    checkCapabilities();
+    setIsMobile(checkMobile());
   }, []);
 
   // Auto-scroll forçado após 10 segundos
@@ -120,17 +106,35 @@ const Hero = () => {
         </div>
       </div>
 
-      {shouldRender3D ? (
+      {/* Renderizar 3D apenas em desktop */}
+      {!isMobile ? (
         <ComputersCanvas />
       ) : (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-64 h-64 bg-gradient-to-br from-purple-400 via-pink-400 to-blue-400 rounded-2xl shadow-2xl flex items-center justify-center">
-            <div className="text-white text-center">
-              <div className="text-6xl mb-4">💻</div>
-              <div className="text-lg font-semibold">Desktop 3D</div>
-              <div className="text-sm opacity-80">Otimizado para seu dispositivo</div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-64 h-64 flex items-center justify-center"
+          >
+            {/* Imagem estática do computador */}
+            <div className="relative">
+              <div className="w-48 h-32 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-2xl">
+                {/* Tela do computador */}
+                <div className="w-full h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-t-lg flex items-center justify-center">
+                  <div className="w-16 h-12 bg-black rounded flex items-center justify-center">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  </div>
+                </div>
+                {/* Base do computador */}
+                <div className="w-full h-12 bg-gradient-to-br from-gray-700 to-gray-800 rounded-b-lg"></div>
+              </div>
+              {/* Teclado */}
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-gray-800 rounded shadow-lg"></div>
+              {/* Mouse */}
+              <div className="absolute -bottom-2 -right-4 w-8 h-12 bg-gray-800 rounded-full shadow-lg"></div>
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
 
