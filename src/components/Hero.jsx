@@ -116,13 +116,13 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-[28rem] h-[28rem] sm:w-[32rem] sm:h-[32rem] md:w-[36rem] md:h-[36rem] lg:w-[40rem] lg:h-[40rem] flex items-center justify-center"
+            className="w-[32rem] h-[32rem] sm:w-[36rem] sm:h-[36rem] md:w-[40rem] md:h-[40rem] lg:w-[44rem] lg:h-[44rem] xl:w-[48rem] xl:h-[48rem] flex items-center justify-center"
           >
-            {/* Imagem PNG do computador com zoom maior */}
+            {/* Imagem PNG do computador com zoom máximo */}
             <img 
               src={computador} 
               alt="Computer Setup" 
-              className="w-full h-full object-contain scale-125 hover:scale-150 transition-transform duration-300"
+              className="w-full h-full object-contain scale-150 hover:scale-175 transition-transform duration-300"
               loading="lazy"
               onError={(e) => {
                 console.log('Erro ao carregar imagem do computador');
