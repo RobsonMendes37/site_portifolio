@@ -11,10 +11,10 @@ const MobileHero = () => {
   const t = translations[language];
   
   // Debug: verificar se as imagens estão carregando
-  console.log('MobileHero - Theme:', theme);
-  console.log('MobileHero - HeroBG:', herobg);
-  console.log('MobileHero - HeroBG Light:', herobg_light);
-  console.log('MobileHero - Background URL:', theme === 'dark' ? herobg : herobg_light);
+  alert(`MobileHero - Theme: ${theme}`);
+  alert(`MobileHero - HeroBG: ${herobg}`);
+  alert(`MobileHero - HeroBG Light: ${herobg_light}`);
+  alert(`MobileHero - Background URL: ${theme === 'dark' ? herobg : herobg_light}`);
   
   return (
     <section 
