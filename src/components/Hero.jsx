@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
@@ -11,6 +12,49 @@ const Hero = () => {
   const { theme } = useTheme();
   const { language } = useLanguage();
   const t = translations[language];
+  const autoScrollTimeoutRef = useRef(null);
+  const hasScrolledRef = useRef(false);
+
+  // Auto-scroll após 8 segundos se não tiver rolado
+  useEffect(() => {
+    const handleScroll = () => {
+      hasScrolledRef.current = true;
+    };
+
+    const handleUserInteraction = () => {
+      hasScrolledRef.current = true;
+    };
+
+    // Adiciona listeners para detectar scroll e interação
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('click', handleUserInteraction);
+    window.addEventListener('touchstart', handleUserInteraction);
+    window.addEventListener('keydown', handleUserInteraction);
+
+    // Auto-scroll após 8 segundos
+    autoScrollTimeoutRef.current = setTimeout(() => {
+      if (!hasScrolledRef.current) {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    }, 8000);
+
+    // Cleanup
+    return () => {
+      if (autoScrollTimeoutRef.current) {
+        clearTimeout(autoScrollTimeoutRef.current);
+      }
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('click', handleUserInteraction);
+      window.removeEventListener('touchstart', handleUserInteraction);
+      window.removeEventListener('keydown', handleUserInteraction);
+    };
+  }, []);
   
   return (
     <section 
