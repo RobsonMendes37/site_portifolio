@@ -7,6 +7,7 @@ import { useTheme } from "../hooks/useTheme";
 import { useLanguage } from "../hooks/useLanguage.jsx";
 import { translations } from "../constants/translations";
 import { herobg, herobg_light } from "../assets";
+import computador from "../assets/computador.png";
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -115,25 +116,19 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-64 h-64 flex items-center justify-center"
+            className="w-80 h-80 flex items-center justify-center"
           >
-            {/* Imagem estática do computador */}
-            <div className="relative">
-              <div className="w-48 h-32 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-2xl">
-                {/* Tela do computador */}
-                <div className="w-full h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-t-lg flex items-center justify-center">
-                  <div className="w-16 h-12 bg-black rounded flex items-center justify-center">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  </div>
-                </div>
-                {/* Base do computador */}
-                <div className="w-full h-12 bg-gradient-to-br from-gray-700 to-gray-800 rounded-b-lg"></div>
-              </div>
-              {/* Teclado */}
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-gray-800 rounded shadow-lg"></div>
-              {/* Mouse */}
-              <div className="absolute -bottom-2 -right-4 w-8 h-12 bg-gray-800 rounded-full shadow-lg"></div>
-            </div>
+            {/* Imagem PNG do computador */}
+            <img 
+              src={computador} 
+              alt="Computer Setup" 
+              className="w-full h-full object-contain"
+              loading="lazy"
+              onError={(e) => {
+                console.log('Erro ao carregar imagem do computador');
+                e.target.style.display = 'none';
+              }}
+            />
           </motion.div>
         </div>
       )}
