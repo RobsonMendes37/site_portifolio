@@ -15,6 +15,30 @@ const Hero = () => {
   const autoScrollTimeoutRef = useRef(null);
   const hasScrolledRef = useRef(false);
   const [showEnhancedScroll, setShowEnhancedScroll] = useState(false);
+  const [shouldRender3D, setShouldRender3D] = useState(false);
+
+  // Detecção inteligente para renderização 3D
+  useEffect(() => {
+    const checkCapabilities = () => {
+      // Verifica se está no browser
+      if (typeof window === 'undefined') {
+        setShouldRender3D(false);
+        return;
+      }
+
+      const isMobile = window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const hasWebGL = !!window.WebGLRenderingContext;
+      const isSlowConnection = navigator.connection?.effectiveType === 'slow-2g' || navigator.connection?.effectiveType === '2g';
+      
+      // Renderizar 3D apenas se:
+      // - Não for mobile
+      // - Tiver WebGL
+      // - Conexão não for lenta
+      setShouldRender3D(!isMobile && hasWebGL && !isSlowConnection);
+    };
+    
+    checkCapabilities();
+  }, []);
 
   // Auto-scroll forçado após 10 segundos
   useEffect(() => {
@@ -96,7 +120,19 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas />
+      {shouldRender3D ? (
+        <ComputersCanvas />
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-64 h-64 bg-gradient-to-br from-purple-400 via-pink-400 to-blue-400 rounded-2xl shadow-2xl flex items-center justify-center">
+            <div className="text-white text-center">
+              <div className="text-6xl mb-4">💻</div>
+              <div className="text-lg font-semibold">Desktop 3D</div>
+              <div className="text-sm opacity-80">Otimizado para seu dispositivo</div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <motion.div 
         className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'
