@@ -1,5 +1,5 @@
 # 🚀 Portfólio 3D com Avatar Interativo
-![Uploading image.png…]()
+<img width="1587" height="1000" alt="image" src="https://github.com/user-attachments/assets/f2b8211c-4a70-4efe-a2d0-20dcb5464de0" />
 
 <div align="center">
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
