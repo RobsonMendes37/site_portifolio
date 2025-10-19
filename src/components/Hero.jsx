@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
@@ -14,6 +14,7 @@ const Hero = () => {
   const t = translations[language];
   const autoScrollTimeoutRef = useRef(null);
   const hasScrolledRef = useRef(false);
+  const [showEnhancedScroll, setShowEnhancedScroll] = useState(false);
 
   // Auto-scroll após 8 segundos se não tiver rolado
   useEffect(() => {
@@ -30,6 +31,13 @@ const Hero = () => {
     window.addEventListener('click', handleUserInteraction);
     window.addEventListener('touchstart', handleUserInteraction);
     window.addEventListener('keydown', handleUserInteraction);
+
+    // Mostrar botão melhorado após 7 segundos
+    const enhancedScrollTimeout = setTimeout(() => {
+      if (!hasScrolledRef.current) {
+        setShowEnhancedScroll(true);
+      }
+    }, 7000);
 
     // Auto-scroll após 8 segundos
     autoScrollTimeoutRef.current = setTimeout(() => {
@@ -49,6 +57,7 @@ const Hero = () => {
       if (autoScrollTimeoutRef.current) {
         clearTimeout(autoScrollTimeoutRef.current);
       }
+      clearTimeout(enhancedScrollTimeout);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('click', handleUserInteraction);
       window.removeEventListener('touchstart', handleUserInteraction);
@@ -100,19 +109,38 @@ const Hero = () => {
         transition={{ duration: 0.8, delay: 3.0 }}
       >
         <a href='#about'>
-          <div className={`w-[35px] h-[64px] rounded-3xl border-4 ${theme === 'dark' ? 'border-secondary' : 'border-gray-400'} flex justify-center items-start p-2 transition-colors duration-300`}>
+          <motion.div 
+            className={`${showEnhancedScroll ? 'w-[50px] h-[80px]' : 'w-[35px] h-[64px]'} rounded-3xl border-4 ${theme === 'dark' ? 'border-secondary' : 'border-gray-400'} flex justify-center items-start p-2 transition-all duration-500`}
+            animate={showEnhancedScroll ? { 
+              scale: [1, 1.1, 1],
+              boxShadow: theme === 'dark' 
+                ? ['0 0 0px #915EFF', '0 0 20px #915EFF', '0 0 0px #915EFF']
+                : ['0 0 0px #bed286', '0 0 20px #bed286', '0 0 0px #bed286']
+            } : {}}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
             <motion.div
               animate={{
-                y: [0, 24, 0],
+                y: [0, showEnhancedScroll ? 32 : 24, 0],
               }}
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
                 repeatType: "loop",
               }}
-              className={`w-3 h-3 rounded-full ${theme === 'dark' ? 'bg-secondary' : 'bg-gray-400'} mb-1 transition-colors duration-300`}
+              className={`${showEnhancedScroll ? 'w-4 h-4' : 'w-3 h-3'} rounded-full ${theme === 'dark' ? 'bg-secondary' : 'bg-gray-400'} mb-1 transition-all duration-500`}
             />
-          </div>
+            {showEnhancedScroll && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className={`absolute -top-8 left-1/2 transform -translate-x-1/2 text-xs font-medium ${theme === 'dark' ? 'text-secondary' : 'text-gray-600'} whitespace-nowrap`}
+              >
+                SCROLL DOWN
+              </motion.div>
+            )}
+          </motion.div>
         </a>
       </motion.div>
     </section>
