@@ -17,6 +17,12 @@ const AppContent = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Verifica se está no browser
+    if (typeof window === 'undefined') {
+      setIsMobile(true);
+      return;
+    }
+
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
     };

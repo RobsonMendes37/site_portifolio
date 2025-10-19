@@ -9,6 +9,15 @@ const SmartBallCanvas = ({ icon, name }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Verifica se está no browser
+    if (typeof window === 'undefined') {
+      console.log('SSR - usando SimpleBall como fallback');
+      setIsMobile(true);
+      setWebglSupported(false);
+      setIsLoading(false);
+      return;
+    }
+
     // Detecta mobile
     const checkMobile = () => {
       return window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
