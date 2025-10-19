@@ -10,11 +10,7 @@ const MobileHero = () => {
   const { language } = useLanguage();
   const t = translations[language];
   
-  // Debug: verificar se as imagens estão carregando
-  alert(`MobileHero - Theme: ${theme}`);
-  alert(`MobileHero - HeroBG: ${herobg}`);
-  alert(`MobileHero - HeroBG Light: ${herobg_light}`);
-  alert(`MobileHero - Background URL: ${theme === 'dark' ? herobg : herobg_light}`);
+  // Debug removido - problema resolvido
   
   return (
     <section 
