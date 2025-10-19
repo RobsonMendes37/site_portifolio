@@ -24,7 +24,20 @@ const AppContent = () => {
     }
 
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+      const width = window.innerWidth;
+      const userAgent = navigator.userAgent;
+      const isMobileWidth = width < 768;
+      const isMobileUserAgent = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+      const isMobile = isMobileWidth || isMobileUserAgent;
+      
+      alert(`Debug Mobile Detection:
+Width: ${width}
+UserAgent: ${userAgent}
+IsMobileWidth: ${isMobileWidth}
+IsMobileUserAgent: ${isMobileUserAgent}
+IsMobile: ${isMobile}`);
+      
+      setIsMobile(isMobile);
     };
     
     checkMobile();
