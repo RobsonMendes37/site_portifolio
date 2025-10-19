@@ -26,7 +26,7 @@ const AppContent = () => {
     const checkMobile = () => {
       const width = window.innerWidth;
       const userAgent = navigator.userAgent;
-      const isMobileWidth = width < 7;
+      const isMobileWidth = width < 768;
       const isMobileUserAgent = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
       const isMobile = isMobileWidth || isMobileUserAgent;
       
@@ -45,30 +45,31 @@ IsMobile: ${isMobile}`);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  if (isMobile) {
-    return (
-      <div
-        className='relative z-0 transition-colors duration-300'
-        style={{ backgroundColor: themeColors.background }}
-      >
-        <Navbar />
-        <MobileHero />
-        <MobileAbout />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className='relative z-0'>
-          <Contact />
-        </div>
-        <Footer />
-        <SimpleAvatar />
-        <SimpleWhatsApp />
-        <ThemeToggle />
-        <LanguageToggle />
-      </div>
-    );
-  }
+  // FORÇANDO USO DOS COMPONENTES ORIGINAIS - SEMPRE
+  // if (isMobile) {
+  //   return (
+  //     <div
+  //       className='relative z-0 transition-colors duration-300'
+  //       style={{ backgroundColor: themeColors.background }}
+  //     >
+  //       <Navbar />
+  //       <MobileHero />
+  //       <MobileAbout />
+  //       <Experience />
+  //       <Tech />
+  //       <Works />
+  //       <Feedbacks />
+  //       <div className='relative z-0'>
+  //         <Contact />
+  //       </div>
+  //       <Footer />
+  //       <SimpleAvatar />
+  //       <SimpleWhatsApp />
+  //       <ThemeToggle />
+  //       <LanguageToggle />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div
