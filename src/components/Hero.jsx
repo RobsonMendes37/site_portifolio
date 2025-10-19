@@ -16,7 +16,7 @@ const Hero = () => {
   const hasScrolledRef = useRef(false);
   const [showEnhancedScroll, setShowEnhancedScroll] = useState(false);
 
-  // Auto-scroll após 8 segundos se não tiver rolado
+  // Auto-scroll forçado após 10 segundos
   useEffect(() => {
     const handleScroll = () => {
       hasScrolledRef.current = true;
@@ -26,31 +26,27 @@ const Hero = () => {
       hasScrolledRef.current = true;
     };
 
-    // Adiciona listeners para detectar scroll e interação
+    // Adiciona listeners para detectar scroll e interação (apenas para tracking)
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('click', handleUserInteraction);
     window.addEventListener('touchstart', handleUserInteraction);
     window.addEventListener('keydown', handleUserInteraction);
 
-    // Mostrar botão melhorado após 7 segundos
+    // Mostrar botão melhorado após 5 segundos
     const enhancedScrollTimeout = setTimeout(() => {
-      if (!hasScrolledRef.current) {
-        setShowEnhancedScroll(true);
-      }
-    }, 7000);
+      setShowEnhancedScroll(true);
+    }, 5000);
 
-    // Auto-scroll após 8 segundos
+    // Auto-scroll forçado após 10 segundos (mesmo se mexendo)
     autoScrollTimeoutRef.current = setTimeout(() => {
-      if (!hasScrolledRef.current) {
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-          aboutSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
       }
-    }, 8000);
+    }, 10000);
 
     // Cleanup
     return () => {
