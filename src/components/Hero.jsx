@@ -20,6 +20,9 @@ const Hero = () => {
           ? `url(${herobg})`
           : `url(${herobg_light})`
       }}
+      onLoad={() => {
+        console.log('Hero background carregado:', theme === 'dark' ? herobg : herobg_light);
+      }}
     >
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}

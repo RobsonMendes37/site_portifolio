@@ -27,8 +27,15 @@ const ServiceCard = ({ index, title, icon, theme }) => (
       >
         <img
           src={icon}
-          alt='web-development'
+          alt={title}
           className='w-12 h-12 object-contain'
+          onError={(e) => {
+            console.log('Erro ao carregar imagem:', title, icon);
+            e.target.style.display = 'none';
+          }}
+          onLoad={() => {
+            console.log('Imagem carregada com sucesso:', title, icon);
+          }}
         />
 
         <h3 className={`${theme === 'dark' ? 'text-white' : 'text-[#2f2a1f]'} text-[16px] font-bold text-center transition-colors duration-300`}>
