@@ -111,18 +111,18 @@ const Hero = () => {
       {!isMobile ? (
         <ComputersCanvas />
       ) : (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-[32rem] h-[32rem] sm:w-[36rem] sm:h-[36rem] md:w-[40rem] md:h-[40rem] lg:w-[44rem] lg:h-[44rem] xl:w-[48rem] xl:h-[48rem] flex items-center justify-center"
+            className="w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] flex items-center justify-center"
           >
-            {/* Imagem PNG do computador com zoom máximo */}
+            {/* Imagem PNG do computador com zoom controlado */}
             <img 
               src={computador} 
               alt="Computer Setup" 
-              className="w-full h-full object-contain scale-150 hover:scale-175 transition-transform duration-300"
+              className="w-full h-full object-contain scale-125 hover:scale-150 transition-transform duration-300"
               loading="lazy"
               onError={(e) => {
                 console.log('Erro ao carregar imagem do computador');
