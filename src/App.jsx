@@ -26,7 +26,7 @@ const AppContent = () => {
     const checkMobile = () => {
       const width = window.innerWidth;
       const userAgent = navigator.userAgent;
-      const isMobileWidth = width < 768;
+      const isMobileWidth = width < 7;
       const isMobileUserAgent = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
       const isMobile = isMobileWidth || isMobileUserAgent;
       
