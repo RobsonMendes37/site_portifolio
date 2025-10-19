@@ -10,10 +10,17 @@ const MobileHero = () => {
   const { language } = useLanguage();
   const t = translations[language];
   
+  // Debug: verificar se as imagens estão carregando
+  console.log('MobileHero - Theme:', theme);
+  console.log('MobileHero - HeroBG:', herobg);
+  console.log('MobileHero - HeroBG Light:', herobg_light);
+  console.log('MobileHero - Background URL:', theme === 'dark' ? herobg : herobg_light);
+  
   return (
     <section 
       className={`relative w-full h-screen mx-auto bg-cover bg-no-repeat bg-center transition-all duration-300`}
       style={{
+        backgroundColor: theme === 'dark' ? '#050816' : '#d4c4a8', // Fallback color
         backgroundImage: theme === 'dark' 
           ? `url(${herobg})`
           : `url(${herobg_light})`
