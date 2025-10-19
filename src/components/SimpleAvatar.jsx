@@ -129,7 +129,7 @@ const SimpleAvatar = () => {
         {/* Tooltip */}
         {showTooltip && (
           <motion.div
-            className={`absolute bottom-full right-0 mb-2 px-3 py-2 bg-black text-white text-sm rounded-lg whitespace-nowrap ${
+            className={`absolute bottom-full right-0 mb-2 px-2 py-1 bg-black text-white text-xs rounded-lg whitespace-nowrap ${
               !isOpen ? "opacity-100" : "opacity-0"
             } transition-opacity duration-300`}
             initial={{ opacity: 0, y: 10 }}
@@ -144,19 +144,19 @@ const SimpleAvatar = () => {
         {/* Avatar Button */}
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-16 h-16 ${theme === 'dark' ? 'bg-tertiary' : 'bg-[#2f2a1f]'} rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden`}
+          className={`w-12 h-12 ${theme === 'dark' ? 'bg-tertiary' : 'bg-[#2f2a1f]'} rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden`}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
           {/* Avatar Face */}
           <div className="relative">
             {/* Eyes */}
-            <div className="flex space-x-1 mb-1">
-              <div className="w-2 h-2 bg-white rounded-full"></div>
-              <div className="w-2 h-2 bg-white rounded-full"></div>
+            <div className="flex space-x-0.5 mb-0.5">
+              <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+              <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
             </div>
             {/* Smile */}
-            <div className="w-4 h-2 border-b-2 border-white rounded-full"></div>
+            <div className="w-3 h-1.5 border-b border-white rounded-full"></div>
           </div>
 
           {/* Pulse Effect */}
