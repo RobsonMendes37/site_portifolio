@@ -6,6 +6,7 @@ import SimpleWhatsApp from "./components/SimpleWhatsApp";
 import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./hooks/useLanguage.jsx";
 import { getThemeColors } from "./constants/colors";
+import { herobg, herobg_light } from "./assets";
 
 const AppContent = () => {
   const { theme } = useTheme();
@@ -20,8 +21,8 @@ const AppContent = () => {
         className="bg-cover bg-no-repeat bg-center transition-all duration-300"
         style={{
           backgroundImage: theme === 'dark' 
-            ? `url('/src/assets/${themeColors.heroBackground}')`
-            : `url('/src/assets/${themeColors.heroBackground}')`
+            ? `url(${herobg})`
+            : `url(${herobg_light})`
         }}
       >
         <Navbar />

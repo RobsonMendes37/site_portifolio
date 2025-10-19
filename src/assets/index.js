@@ -35,6 +35,8 @@ import vancleida from "./testimonials/vancleida.png";
 import mateus from "./testimonials/mateus.png";
 import marcos from "./testimonials/marcos.png";
 import robson from "./robson.png";
+import herobg from "./herobg.png";
+import herobg_light from "./herobg_light.png";
 
 
 export {
@@ -42,6 +44,8 @@ export {
   marcos,
   mateus,
   vancleida,
+  herobg,
+  herobg_light,
   logo,
   backend,
   creator,

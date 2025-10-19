@@ -68,7 +68,7 @@ const About = () => {
             <div className="w-full h-full rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-[#065f46] via-[#1e1b4b] to-[#312e81] p-1">
               <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-[#2f2a1f]/20 to-[#7a6348]/20 backdrop-blur-sm">
                 <img 
-                  src="/src/assets/robson.png" 
+                  src={robson} 
                   alt="Robson" 
                   className="w-full h-full object-cover"
                 />
@@ -182,7 +182,7 @@ const About = () => {
                 <div className="w-full h-full rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-[#065f46] via-[#1e1b4b] to-[#312e81] p-2">
                   <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-[#2f2a1f]/20 to-[#7a6348]/20 backdrop-blur-sm">
                     <img 
-                      src="/src/assets/robson.png" 
+                      src={robson} 
                       alt="Robson" 
                       className="w-full h-full object-cover"
                     />
