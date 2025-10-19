@@ -5,6 +5,7 @@ import { ComputersCanvas } from "./canvas";
 import { useTheme } from "../hooks/useTheme";
 import { useLanguage } from "../hooks/useLanguage.jsx";
 import { translations } from "../constants/translations";
+import { herobg, herobg_light } from "../assets";
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -12,7 +13,14 @@ const Hero = () => {
   const t = translations[language];
   
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section 
+      className={`relative w-full h-screen mx-auto bg-cover bg-no-repeat bg-center transition-all duration-300`}
+      style={{
+        backgroundImage: theme === 'dark' 
+          ? `url(${herobg})`
+          : `url(${herobg_light})`
+      }}
+    >
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
