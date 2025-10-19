@@ -1,6 +1,9 @@
 import { BrowserRouter } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Footer, ThemeToggle, LanguageToggle, StarsCanvas } from "./components";
+import MobileHero from "./components/MobileHero";
+import MobileAbout from "./components/MobileAbout";
 import SimpleAvatar from "./components/SimpleAvatar";
 import SimpleWhatsApp from "./components/SimpleWhatsApp";
 import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
@@ -11,6 +14,42 @@ import { herobg, herobg_light } from "./assets";
 const AppContent = () => {
   const { theme } = useTheme();
   const themeColors = getThemeColors(theme);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  if (isMobile) {
+    return (
+      <div
+        className='relative z-0 transition-colors duration-300'
+        style={{ backgroundColor: themeColors.background }}
+      >
+        <Navbar />
+        <MobileHero />
+        <MobileAbout />
+        <Experience />
+        <Tech />
+        <Works />
+        <Feedbacks />
+        <div className='relative z-0'>
+          <Contact />
+        </div>
+        <Footer />
+        <SimpleAvatar />
+        <SimpleWhatsApp />
+        <ThemeToggle />
+        <LanguageToggle />
+      </div>
+    );
+  }
 
   return (
     <div
