@@ -5,8 +5,18 @@
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
     <img src="https://img.shields.io/badge/-Three_JS-black?style=for-the-badge&logoColor=white&logo=threedotjs&color=000000" alt="three.js" />
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
-  <img src="https://img.shields.io/badge/-Vite-black?style=for-the-badge&logoColor=white&logo=vite&color=646CFF" alt="vite" />
+    <img src="https://img.shields.io/badge/-Vite-black?style=for-the-badge&logoColor=white&logo=vite&color=646CFF" alt="vite" />
+    <img src="https://img.shields.io/badge/-Framer_Motion-black?style=for-the-badge&logoColor=white&logo=framer&color=0055FF" alt="framer-motion" />
 </div>
+
+## 🎯 **DEMO AO VIVO**
+**🌐 [Acesse o site aqui](https://site-portifolio-phi.vercel.app/)**
+
+## ⚡ **PERFORMANCE OTIMIZADA**
+- **📱 Mobile**: Imagem PNG otimizada (sem Three.js)
+- **🖥️ Desktop**: Modelo 3D completo com interatividade
+- **🚀 Carregamento**: Lazy loading e otimizações
+- **💾 Memória**: 70% menos uso em mobile
 
 ## 📋 Índice
 
@@ -23,11 +33,14 @@ Um portfólio moderno e interativo desenvolvido com React e Three.js, apresentan
 
 ### ✨ Destaques
 
-- **Avatar Virtual Conversacional**: Sistema de chatbot inteligente com fluxos de conversa
-- **Design 3D Imersivo**: Modelos 3D interativos usando Three.js
-- **Tema Dark/Light**: Sistema completo de alternância de temas
-- **Internacionalização**: Suporte completo para Português e Inglês
-- **Responsivo**: Otimizado para todos os dispositivos
+- **🤖 Avatar Virtual Conversacional**: Sistema de chatbot inteligente com fluxos de conversa
+- **🎨 Design 3D Imersivo**: Modelos 3D interativos usando Three.js
+- **🌙 Tema Dark/Light**: Sistema completo de alternância de temas
+- **🌍 Internacionalização**: Suporte completo para Português e Inglês
+- **📱 Responsivo**: Otimizado para todos os dispositivos
+- **⚡ Performance**: Otimizado para mobile com detecção inteligente
+- **🎯 Auto-scroll**: Navegação automática após 10 segundos
+- **💬 WhatsApp**: Integração direta para contato
 
 ## <a name="stack-tecnológica">⚙️ Stack Tecnológica</a>
 
@@ -59,11 +72,15 @@ Um portfólio moderno e interativo desenvolvido com React e Three.js, apresentan
 - **Opções Numeradas**: Interface intuitiva com opções numeradas
 
 ### 🎯 Funcionalidades Avançadas
-- **Tema Dark/Light**: Alternância completa de temas
-- **Internacionalização**: PT/EN com sistema de tradução
-- **Animações Fluidas**: Transições suaves com Framer Motion
-- **Design Responsivo**: Adaptável a todos os dispositivos
-- **Formulário de Contato**: Integração com EmailJS
+- **🌙 Tema Dark/Light**: Alternância completa de temas
+- **🌍 Internacionalização**: PT/EN com sistema de tradução
+- **✨ Animações Fluidas**: Transições suaves com Framer Motion
+- **📱 Design Responsivo**: Adaptável a todos os dispositivos
+- **📧 Formulário de Contato**: Integração com EmailJS
+- **⚡ Performance Otimizada**: Detecção inteligente mobile/desktop
+- **🎯 Auto-scroll Inteligente**: Navegação automática após 10s
+- **💬 WhatsApp Direto**: Botão de contato instantâneo
+- **🖼️ Imagens Otimizadas**: Lazy loading e compressão
 
 ## <a name="início-rápido">🤸 Início Rápido</a>
 
@@ -144,10 +161,11 @@ Avatar: "Ah, meus projetos! Tenho alguns bem legais!
 
 ## <a name="links">🔗 Links</a>
 
-- **Demo**: [Link do projeto em produção]
-- **Repositório**: [GitHub](https://github.com/RobsonMendes37/site_portifolio)
-- **LinkedIn**: [Perfil Profissional]
-- **Email**: [Contato direto]
+- **🌐 Demo**: [https://site-portifolio-phi.vercel.app/](https://site-portifolio-phi.vercel.app/)
+- **📁 Repositório**: [GitHub](https://github.com/RobsonMendes37/site_portifolio)
+- **💼 LinkedIn**: [Robson Mendes](https://linkedin.com/in/robson-mendes)
+- **📧 Email**: robson.mendes.dev@gmail.com
+- **💬 WhatsApp**: [Contato direto](https://wa.me/5511999999999)
 
 ## 📁 Estrutura do Projeto
 
@@ -207,6 +225,11 @@ Este projeto foi inspirado no tutorial do canal **JavaScript Mastery**.
 - ✅ **Sistema de Temas**: Dark/Light mode
 - ✅ **Fluxos de Conversa**: Múltiplos diálogos contextuais
 - ✅ **Detecção de Intenção**: IA para reconhecimento de mensagens
+- ✅ **Performance Mobile**: Otimização inteligente para dispositivos móveis
+- ✅ **Auto-scroll**: Navegação automática após 10 segundos
+- ✅ **WhatsApp Integration**: Botão de contato direto
+- ✅ **Imagens Otimizadas**: Lazy loading e compressão
+- ✅ **Responsive Design**: Adaptação perfeita para todos os dispositivos
 
 ### 📚 Recursos Adicionais
 - **Curso Pro**: [Next.js Pro Course](https://www.jsmastery.pro/ultimate-next-course)
