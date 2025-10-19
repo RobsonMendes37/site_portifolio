@@ -49,19 +49,28 @@ const Hero = () => {
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
-          <div className={`w-[35px] h-[64px] rounded-3xl border-4 ${theme === 'dark' ? 'border-secondary' : 'border-gray-400'} flex justify-center items-start p-2 transition-colors duration-300`}>
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className={`w-3 h-3 rounded-full ${theme === 'dark' ? 'bg-secondary' : 'bg-gray-400'} mb-1 transition-colors duration-300`}
-            />
-          </div>
+          <motion.div
+            className={`bg-white/20 backdrop-blur-sm rounded-full p-4 cursor-pointer border-2 ${theme === 'dark' ? 'border-white/30' : 'border-gray-400/30'} transition-colors duration-300`}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <div className="flex flex-col items-center">
+              <span className={`text-xs mb-2 font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-800'} transition-colors duration-300`}>
+                SCROLL
+              </span>
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className={`w-6 h-6 border-2 ${theme === 'dark' ? 'border-white' : 'border-gray-600'} rounded-full flex items-center justify-center transition-colors duration-300`}
+              >
+                <motion.div
+                  animate={{ y: [0, 4, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className={`w-1 h-1 ${theme === 'dark' ? 'bg-white' : 'bg-gray-600'} rounded-full transition-colors duration-300`}
+                />
+              </motion.div>
+            </div>
+          </motion.div>
         </a>
       </div>
     </section>
