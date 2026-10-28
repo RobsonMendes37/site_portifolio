@@ -12,7 +12,7 @@
 ## 🎯 **DEMO AO VIVO**
 **🌐 [Acesse o site aqui](https://site-portifolio-phi.vercel.app/)**
 
-## ⚡ **PERFORMANCE OTIMIZADA**
+## ⚡ **PERFORMANCE**
 - **📱 Mobile**: Imagem PNG otimizada (sem Three.js)
 - **🖥️ Desktop**: Modelo 3D completo com interatividade
 - **🚀 Carregamento**: Lazy loading e otimizações
@@ -71,7 +71,7 @@ Um portfólio moderno e interativo desenvolvido com React e Three.js, apresentan
 - **Respostas Contextuais**: Respostas baseadas no contexto da conversa
 - **Opções Numeradas**: Interface intuitiva com opções numeradas
 
-### 🎯 Funcionalidades Avançadas
+### 🎯 Funcionalidades 
 - **🌙 Tema Dark/Light**: Alternância completa de temas
 - **🌍 Internacionalização**: PT/EN com sistema de tradução
 - **✨ Animações Fluidas**: Transições suaves com Framer Motion
