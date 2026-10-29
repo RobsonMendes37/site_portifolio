@@ -9,8 +9,8 @@
     <img src="https://img.shields.io/badge/-Framer_Motion-black?style=for-the-badge&logoColor=white&logo=framer&color=0055FF" alt="framer-motion" />
 </div>
 
-## 🎯 **DEMO AO VIVO**
-**🌐 [Acesse o site aqui]([https://3d-portifolio-d5x0tum4t-robsonmendes37s-projects.vercel.app/])**
+## 🎯 **DEMO AO VIVO** 
+**🌐 [Acesse o site aqui](https://3d-portifolio-d5x0tum4t-robsonmendes37s-projects.vercel.app/)**
 
 ## ⚡ **PERFORMANCE**
 - **📱 Mobile**: Imagem PNG otimizada (sem Three.js)
