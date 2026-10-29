@@ -10,7 +10,7 @@
 </div>
 
 ## 🎯 **DEMO AO VIVO**
-**🌐 [Acesse o site aqui]([https://site-portifolio-phi.vercel.app/](https://3d-portifolio-d5x0tum4t-robsonmendes37s-projects.vercel.app/))**
+**🌐 [Acesse o site aqui]([https://3d-portifolio-d5x0tum4t-robsonmendes37s-projects.vercel.app/])**
 
 ## ⚡ **PERFORMANCE**
 - **📱 Mobile**: Imagem PNG otimizada (sem Three.js)
